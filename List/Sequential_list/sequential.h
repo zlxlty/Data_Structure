@@ -11,4 +11,11 @@ typedef struct _tag_seqlist{
 
 typedef void SeqList;
 typedef void SeqListNode;
+
+SeqList* SeqList_Create(int capacity);
+int SeqList_Capacity(SeqList* list);
+int SeqList_Length(SeqList* list);
+int SeqList_Insert(SeqList* list, SeqListNode*  node, int pos);
+
+
 #endif

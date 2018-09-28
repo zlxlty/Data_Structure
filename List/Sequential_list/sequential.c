@@ -1,15 +1,7 @@
-#include <stido.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "sequential.h"
-
-typedef struct _tag_seqlist{
-
-  int capacity;
-  int length;
-  int* node;
-
-}Tseqlist;
 
 SeqList* SeqList_Create(int capacity){
 
@@ -23,7 +15,7 @@ SeqList* SeqList_Create(int capacity){
     return NULL;
   }
 
-  memset(temp, 0, sizeof(Tseqlist));
+  memset(ptemp, 0, sizeof(Tseqlist));
   ptemp->capacity = capacity;
   ptemp->length = 0;
   ptemp->node = (int*)malloc(sizeof(SeqList*));
@@ -55,4 +47,32 @@ int SeqList_Length(SeqList* list){
   }
   ptemp = (Tseqlist*)list;
   return ptemp->length;
+}
+
+//删除元素
+int SeqList_Insert(SeqList* list, SeqListNode*  node, int pos){
+  int i;
+  Tseqlist* ptemp = NULL;
+
+  if (list == NULL){
+    return -1;
+  }
+
+  ptemp = (Tseqlist*)list;
+  //如果顺序表已满
+  if (ptemp->length == ptemp->capacity){
+    return -2;
+  }
+
+  if(pos > ptemp->length){
+    pos = ptemp->length;
+  }
+
+  for(i=ptemp->length; i>pos; i--){
+    ptemp->node[i] = ptemp->node[i-1];
+  }
+
+  ptemp->node[i] = (int*)node;
+  ptemp->length++;
+  return 0;
 }

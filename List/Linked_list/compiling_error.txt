@@ -1,0 +1,22 @@
+/home/skylu/Desktop/CS/C++/testing/main.c:7:17: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ typedef _Student{
+                 ^
+/home/skylu/Desktop/CS/C++/testing/main.c:12:2: warning: data definition has no type or storage class
+ }Student;
+  ^~~~~~~
+/home/skylu/Desktop/CS/C++/testing/main.c:12:2: warning: type defaults to ‘int’ in declaration of ‘Student’ [-Wimplicit-int]
+/home/skylu/Desktop/CS/C++/testing/main.c: In function ‘main’:
+/home/skylu/Desktop/CS/C++/testing/main.c:19:11: error: expected ‘;’ before ‘student’
+   Student student;
+           ^~~~~~~
+/home/skylu/Desktop/CS/C++/testing/main.c:20:3: error: ‘student’ undeclared (first use in this function); did you mean ‘Student’?
+   student.name = {"SKY"};
+   ^~~~~~~
+   Student
+/home/skylu/Desktop/CS/C++/testing/main.c:20:3: note: each undeclared identifier is reported only once for each function it appears in
+/home/skylu/Desktop/CS/C++/testing/main.c:20:18: error: expected expression before ‘{’ token
+   student.name = {"SKY"};
+                  ^
+/home/skylu/Desktop/CS/C++/testing/main.c:22:3: error: ‘pfound’ undeclared (first use in this function)
+   pfound->letter = 'c';
+   ^~~~~~
