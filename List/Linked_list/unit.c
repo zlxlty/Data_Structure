@@ -16,7 +16,7 @@ Header* Create_Unit(){
 
 }
 
-void Insert_Unit(Header *pHeader, Node *lttr){
+void Insert_Unit(Header *pHeader, char lttr){
 
   Unit *pUnit = (Unit*) malloc (sizeof(Unit));
   pUnit->letter = lttr;

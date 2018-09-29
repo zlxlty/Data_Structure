@@ -1,28 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 // #include <python.h>
 #include "unit.h"
 #define max_name 20
-
-typedef struct _Student{
-
-  char* name;
-  int score;
-
-}Student;
 
 int main(int argc, char const *argv[]) {
 
   int i;
   Header *pHeader = Create_Unit();
 
-  Student *student = NULL;
-  student = (Student*) malloc (sizeof(Student));
-  student->name = "SKY";
-  student->score = 100;
+  Insert_Unit(pHeader, 'a');
+  Insert_Unit(pHeader, 'b');
+  Print_Unit(pHeader);
+  Unit *pfound = Find_Unit(pHeader, 'b');
+  pfound->letter = 'c';
+  Print_Unit(pHeader);
 
-  Insert_Unit(pHeader, student);
+  char alpha[8] = {"ABCDEFG"};
+
+  for(i=0; i<7; i++){
+
+    Insert_Unit(pHeader, alpha[i]);
+
+  }
+
   Print_Unit(pHeader);
   Destroy_Unit(pHeader);
   Print_Unit(pHeader);

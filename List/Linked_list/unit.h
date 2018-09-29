@@ -13,7 +13,7 @@ typedef struct Header{
 typedef struct Unit{
 
   struct Unit *down;
-  Node* letter;
+  char letter;
 
 }Unit;
 
@@ -24,7 +24,7 @@ Header* Create_Unit();
 :return: pointer of Header
 */
 
-void Insert_Unit(Header *pHeader, Node* lttr);
+void Insert_Unit(Header *pHeader, char lttr);
 /* Insert a unit structure inside the linked list
 :param Header *pHeader: pointer of the head of linked list
 :param char lttr: the letter that need to be insert into linked list
